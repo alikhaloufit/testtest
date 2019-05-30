@@ -1,0 +1,90 @@
+#services {
+  margin-top: 50px;
+  font-family: "Stem-Regular", sans-serif;
+  h2 {
+    font-size: 48px;
+  }
+  p {
+    margin-top: 30px;
+  }
+  .accordions {
+    margin-top: 60px;
+    position: relative;
+    .line {
+      display: block;
+      width: 100%;
+      height: 2px;
+      margin-bottom: 20px;
+      background-color: #383838;
+    }
+    .accordion-item {
+      position: relative;
+      padding: 25px;
+      transition: .4s background-color ease-in-out;
+      .title-bar {
+        width: 100%;
+        position: relative;
+        h3 {
+          font-family: "Stem-Medium", sans-serif;
+          margin-bottom: 10px;
+          font-size: 1.4rem;
+        }
+        p {
+          margin: 10px 0;
+        }
+        button {
+          width: 35px;
+          height: 35px;
+          background: none;
+          border: none;
+          -webkit-appearance: none;
+          transition: .4s transform ease-in-out;
+          transform: rotate(0);
+          outline: none;
+          cursor: pointer;
+        }
+      }
+      .accordion-content {
+        transition: .4s transform ease-in-out, max-height .4s ease-in-out;
+        transform: scaleY(0);
+        transform-origin: 0 0;
+        max-height: 0;
+        &>p {
+          font-family: "Stem-Medium", sans-serif;
+          font-size: 1.4rem;
+          margin-bottom: 10px;
+          margin-top: 0;
+        }
+        img {
+          margin-top: 30px;
+        }
+        .pricelist {
+          margin-top: 30px;
+          h4 {
+            font-family: "Stem-Medium", sans-serif;
+          }
+          ul {
+            margin-top: 20px;
+            margin-left: 30px;
+            li {
+              font-family: "Stem-Regular", sans-serif;
+            }
+          }
+        }
+      }
+      &.opened {
+        background-color: #F6F6F6;
+        margin-bottom: 20px;
+        .title-bar {
+          button {
+            transform: rotate(180deg);
+          }
+        }
+        .accordion-content {
+          max-height: 1000px;
+          transform: scaleY(1);
+        }
+      }
+    }
+  }
+}
